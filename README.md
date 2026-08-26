@@ -14,6 +14,10 @@ Stack: Next.js App Router, TypeScript, Tailwind CSS. Configured for a fully stat
 
 Regenerate the Open Graph PNG with `npm run og` (`scripts/generate-og.py`). Source art: `public/og.svg` and `scripts/og.html`.
 
+## GitHub Action
+
+Push to `main` (or `workflow_dispatch`) builds and publishes to djig/djig.github.io which is https://djig.github.io/. Secret PAGES_DEPLOY_KEY is a write deploy key for djig/djig.github.io.
+
 ## Deploy the static out/ folder
 
 Build once, then point any static host at `out/`.
