@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Jignesh Dhamecha">
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+  <defs>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M72 0H0V72" fill="none" stroke="#e8b86d" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="48" y="48" width="1104" height="534" fill="none" stroke="#e8b86d" stroke-opacity="0.35" stroke-width="1"/>
+  <rect x="56" y="56" width="12" height="12" fill="none" stroke="#e8b86d" stroke-width="1"/>
+  <rect x="1132" y="562" width="12" height="12" fill="none" stroke="#e8b86d" stroke-width="1"/>
+  <text x="80" y="120" fill="#e8b86d" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" letter-spacing="6">FOSTER CITY, CA</text>
+  <text x="80" y="280" fill="#eceae4" font-family="ui-sans-serif, system-ui, sans-serif" font-size="88" font-weight="800">Jignesh</text>
+  <text x="80" y="372" fill="#eceae4" font-family="ui-sans-serif, system-ui, sans-serif" font-size="88" font-weight="800">Dhamecha<tspan fill="#e8b86d">.</tspan></text>
+  <rect x="80" y="400" width="96" height="2" fill="#e8b86d"/>
+  <text x="80" y="460" fill="#9a968e" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28">Senior Frontend / Fullstack / AI Engineer</text>
+  <text x="80" y="530" fill="#6b6862" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20">14+ years product UI  ·  Agentic and generative interfaces</text>
+  <rect x="1088" y="80" width="48" height="48" fill="none" stroke="#e8b86d" stroke-width="1.5"/>
+  <text x="1112" y="110" text-anchor="middle" fill="#e8b86d" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700">JD</text>
+</svg>
