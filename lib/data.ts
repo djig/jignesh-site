@@ -9,6 +9,8 @@ export const person = {
   phoneHref: "tel:+12135092687",
   site: "https://engtoolshub.com/",
   siteLabel: "engtoolshub.com",
+  web: "https://djig.github.io/",
+  webLabel: "djig.github.io",
   role: "Senior Frontend / Fullstack / AI Engineer",
   positioning:
     "Fourteen years of product UI — now shipping agentic and generative interfaces.",

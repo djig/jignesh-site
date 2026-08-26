@@ -35,9 +35,17 @@ export default function DesignersPage() {
         {/* Masthead */}
         <header className="border-b-2 pb-4 b-line">
           <div className="flex flex-wrap items-baseline justify-between gap-4 pr-12">
-            <p className="font-display text-lg font-medium italic t-tx">
-              {person.name}
-            </p>
+            <div>
+              <p className="font-display text-lg font-medium italic t-tx">
+                {person.name}
+              </p>
+              <a
+                href={person.web}
+                className="font-mono text-[11px] tracking-[0.12em] t-acc underline underline-offset-4 hover:opacity-80"
+              >
+                {person.webLabel}
+              </a>
+            </div>
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] t-dim">
               {person.location} — Est. 2006 in production
             </p>

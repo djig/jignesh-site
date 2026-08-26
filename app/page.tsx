@@ -47,6 +47,14 @@ export default function HomePage() {
             {person.name}
           </h1>
           <p className="mt-1 t-acc">{person.role}</p>
+          <p className="mt-1.5">
+            <a
+              href={person.web}
+              className="font-semibold t-tx underline decoration-[var(--acc)] decoration-2 underline-offset-4 hover:t-acc"
+            >
+              {person.webLabel}
+            </a>
+          </p>
           <p className="mt-2 max-w-2xl t-mut">{person.positioning}</p>
           <p className="mt-2 text-[12px] t-dim">
             {person.location} ·{" "}

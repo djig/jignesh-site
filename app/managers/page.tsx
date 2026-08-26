@@ -33,6 +33,12 @@ export default function ManagersPage() {
               {person.first} {person.last}
               <span className="t-acc">.</span>
             </h1>
+            <a
+              href={person.web}
+              className="mt-3 inline-block font-mono text-sm font-medium t-acc underline underline-offset-4 hover:opacity-80"
+            >
+              {person.webLabel}
+            </a>
             <p className="mt-4 max-w-xl font-display text-lg italic leading-snug t-mut md:text-xl">
               {person.positioning}
             </p>
