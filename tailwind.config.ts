@@ -9,48 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#0a0a0b",
-        elevated: "#111113",
-        panel: "#161618",
-        ink: "#eceae4",
-        mute: "#9a968e",
-        dim: "#6b6862",
-        line: "#222226",
+        canvas: "#0b0a09",
+        elevated: "#131110",
+        ink: "#f4f1e8",
+        mute: "#a9a499",
+        dim: "#716c61",
         gold: {
           DEFAULT: "#e8b86d",
-          dim: "#c49a52",
-          faint: "#e8b86d1f",
+          bright: "#f5d9a6",
+          deep: "#c98a3b",
+          faint: "rgba(232, 184, 109, 0.12)",
         },
       },
       fontFamily: {
-        display: ["var(--font-syne)", "ui-sans-serif", "system-ui", "sans-serif"],
-        sans: ["var(--font-plex)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-fraunces)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: [
+          "var(--font-plex-mono)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "monospace",
+        ],
       },
       letterSpacing: {
-        tightest: "-0.04em",
+        tightest: "-0.03em",
       },
       maxWidth: {
         page: "72rem",
-      },
-      backgroundImage: {
-        grid: "linear-gradient(to right, rgba(232,184,109,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(232,184,109,0.035) 1px, transparent 1px)",
-      },
-      backgroundSize: {
-        grid: "72px 72px",
-      },
-      keyframes: {
-        rise: {
-          from: { opacity: "0", transform: "translateY(18px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-        fade: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-      },
-      animation: {
-        rise: "rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
-        fade: "fade 1s ease both",
       },
     },
   },

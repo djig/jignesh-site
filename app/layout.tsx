@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Syne, IBM_Plex_Sans } from "next/font/google";
+import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import { person } from "@/lib/data";
 import "./globals.css";
 
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-fraunces",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
 });
 
-const plex = IBM_Plex_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-plex",
+  variable: "--font-inter",
   display: "swap",
-  weight: ["400", "500", "600"],
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-plex-mono",
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 const title = "Jignesh Dhamecha — Senior Frontend & Agentic UI Engineer";
@@ -97,8 +104,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${syne.variable} ${plex.variable}`}>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable} ${plexMono.variable}`}
+    >
       <body className="font-sans bg-canvas text-ink antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

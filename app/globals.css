@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: dark;
-  --canvas: #0a0a0b;
-  --ink: #eceae4;
+  --canvas: #0b0a09;
+  --ink: #f4f1e8;
   --gold: #e8b86d;
 }
 
@@ -16,11 +16,36 @@ html {
 body {
   background: var(--canvas);
   color: var(--ink);
-  font-feature-settings: "ss01" 1, "kern" 1;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Faint gold luminosity at the top of the page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    70% 55% at 50% 0%,
+    rgba(232, 184, 109, 0.06),
+    transparent 70%
+  );
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 ::selection {
-  background: rgba(232, 184, 109, 0.28);
+  background: rgba(232, 184, 109, 0.25);
   color: #fff8ea;
 }
 
@@ -48,26 +73,52 @@ body {
 #hero-name {
   overflow: visible;
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
-.rise-1 {
-  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+.text-gradient-gold {
+  background: linear-gradient(100deg, #f5d9a6 0%, #e8b86d 45%, #c98a3b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.rise-2 {
-  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+/* Hero entrance: blurred rise, staggered per line */
+.hero-line {
+  opacity: 0;
+  animation: hero-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@keyframes rise {
+.hero-d1 { animation-delay: 0.05s; }
+.hero-d2 { animation-delay: 0.18s; }
+.hero-d3 { animation-delay: 0.38s; }
+.hero-d4 { animation-delay: 0.55s; }
+.hero-d5 { animation-delay: 0.7s; }
+
+@keyframes hero-rise {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(26px);
+    filter: blur(10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
+}
+
+/* Scroll reveal — hidden state only applies when JS is present */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 details > summary {
@@ -105,13 +156,107 @@ details > summary::-webkit-details-marker {
     scroll-behavior: auto;
   }
 
-  .rise-1,
-  .rise-2 {
+  .hero-line {
     animation: none !important;
-    transform: none !important;
+    opacity: 1;
+  }
+
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .nav-link::after {
     transition: none;
   }
+}
+
+/* ---- Variant review: theming system ---- */
+.vscope {
+  background: var(--bg);
+  color: var(--tx);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.bg-card { background: var(--bg2); }
+.t-tx { color: var(--tx); }
+.t-mut { color: var(--mut); }
+.t-dim { color: var(--dim); }
+.t-acc { color: var(--acc); }
+.b-line { border-color: var(--line); }
+.bg-acc { background: var(--acc); }
+
+[data-v="v1"][data-mode="dark"],
+[data-v="v4"][data-mode="dark"] {
+  --bg: #0b0a09;
+  --bg2: #14120e;
+  --tx: #f4f1e8;
+  --mut: #a9a499;
+  --dim: #716c61;
+  --acc: #e8b86d;
+  --line: rgba(255, 255, 255, 0.09);
+}
+
+[data-v="v1"][data-mode="light"],
+[data-v="v4"][data-mode="light"] {
+  --bg: #f6f3ec;
+  --bg2: #fdfcf8;
+  --tx: #1d1a15;
+  --mut: #57524a;
+  --dim: #8b8577;
+  --acc: #996a1f;
+  --line: rgba(29, 26, 21, 0.13);
+}
+
+[data-v="v2"][data-mode="dark"] {
+  --bg: #0b0906;
+  --bg2: #14100a;
+  --tx: #e6d9bd;
+  --mut: #a4977a;
+  --dim: #6e6450;
+  --acc: #ffb454;
+  --line: rgba(255, 180, 84, 0.2);
+}
+
+[data-v="v2"][data-mode="light"] {
+  --bg: #f6efdd;
+  --bg2: #fdf8ec;
+  --tx: #3b3220;
+  --mut: #6d5f43;
+  --dim: #98876a;
+  --acc: #a35f00;
+  --line: rgba(59, 50, 32, 0.25);
+}
+
+[data-v="v3"][data-mode="light"] {
+  --bg: #f7f3ea;
+  --bg2: #fffdf7;
+  --tx: #191611;
+  --mut: #554f41;
+  --dim: #8c8471;
+  --acc: #8f6420;
+  --line: rgba(25, 22, 17, 0.15);
+}
+
+[data-v="v3"][data-mode="dark"] {
+  --bg: #14110b;
+  --bg2: #1b1710;
+  --tx: #efe8d8;
+  --mut: #a89f8b;
+  --dim: #6f695a;
+  --acc: #e0b26a;
+  --line: rgba(255, 255, 255, 0.1);
+}
+
+.cursor-blink {
+  animation: blink 1.1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink { animation: none; }
 }
