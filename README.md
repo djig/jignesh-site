@@ -1,6 +1,6 @@
 # Jignesh Dhamecha — Portfolio
 
-Static personal site for [Jignesh Dhamecha](https://engtoolshub.com/): senior frontend / fullstack / AI engineer in Foster City, CA.
+Static personal site for [Jignesh Dhamecha](https://djig.github.io/): senior software engineer building AI agent products, in Foster City, CA.
 
 Live site: [djig.github.io](https://djig.github.io/). Source is this repo.
 

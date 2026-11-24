@@ -5,6 +5,7 @@ import {
   education,
   experience,
   person,
+  projects,
   skills,
 } from "@/lib/data";
 import { ThemeScope } from "@/components/variants/ThemeScope";
@@ -63,6 +64,13 @@ export default function HomePage() {
               className="t-acc underline underline-offset-4 hover:opacity-80"
             >
               {person.email}
+            </a>{" "}
+            ·{" "}
+            <a
+              href={person.github}
+              className="t-acc underline underline-offset-4 hover:opacity-80"
+            >
+              {person.githubLabel}
             </a>{" "}
             ·{" "}
             <a
@@ -159,6 +167,21 @@ export default function HomePage() {
             ))}
           </div>
 
+          <Prompt cmd="ls side-projects/" />
+          <div className="space-y-1">
+            {projects.map((project) => (
+              <p key={project.name}>
+                <a
+                  href={project.href}
+                  className="t-tx underline underline-offset-4 hover:t-acc"
+                >
+                  {project.name}
+                </a>
+                <span className="t-mut"> — {project.summary}</span>
+              </p>
+            ))}
+          </div>
+
           <Prompt cmd="cat credentials.txt" />
           <p className="t-mut">
             {education.degree} — {education.school}
@@ -179,6 +202,10 @@ export default function HomePage() {
           <p className="mt-1 t-mut">
             <a href={person.phoneHref} className="hover:t-acc">
               {person.phone}
+            </a>{" "}
+            ·{" "}
+            <a href={person.github} className="hover:t-acc">
+              {person.githubLabel}
             </a>{" "}
             ·{" "}
             <a href={person.site} className="hover:t-acc">

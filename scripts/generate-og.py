@@ -91,10 +91,10 @@ def via_pillow() -> bool:
     draw.text((80, 180), "Jignesh", fill=ink, font=display)
     draw.text((80, 276), "Dhamecha.", fill=ink, font=display)
     draw.rectangle([80, 392, 176, 394], fill=gold)
-    draw.text((80, 424), "Senior Frontend / Fullstack / AI Engineer", fill=mute, font=mid)
+    draw.text((80, 424), "Senior Software Engineer · AI Agent Products", fill=mute, font=mid)
     draw.text(
         (80, 478),
-        "14+ years product UI  ·  Agentic and generative interfaces",
+        "14+ years product UI  ·  AI agent products, end to end",
         fill=dim,
         font=small,
     )

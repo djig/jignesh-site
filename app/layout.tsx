@@ -24,19 +24,20 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-const title = "Jignesh Dhamecha — Senior Frontend & Agentic UI Engineer";
+const title = "Jignesh Dhamecha — Senior Software Engineer, AI Agent Products";
 const description =
-  "Senior frontend / fullstack / AI engineer in Foster City, CA. 14+ years of product UI. Specializes in agentic and generative interfaces.";
+  "Senior software engineer in Foster City, CA. Builds AI agent products end to end: streaming chat UIs, terminal clients, agent plugins, and the pipelines behind them.";
 
 export const metadata: Metadata = {
   title,
   description,
-  metadataBase: new URL("https://engtoolshub.com"),
+  metadataBase: new URL("https://djig.github.io"),
   applicationName: "Jignesh Dhamecha",
   authors: [{ name: person.name }],
   keywords: [
     "Jignesh Dhamecha",
-    "Senior Frontend Engineer",
+    "Senior Software Engineer",
+    "AI agents",
     "Agentic UI",
     "Generative UI",
     "React",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Jignesh Dhamecha — Senior Frontend / Fullstack / AI Engineer",
+        alt: "Jignesh Dhamecha — Senior Software Engineer, AI Agent Products",
       },
     ],
   },
@@ -77,7 +78,8 @@ const jsonLd = {
   jobTitle: person.role,
   email: `mailto:${person.email}`,
   telephone: person.phoneHref,
-  url: person.site,
+  url: person.web,
+  sameAs: [person.github, person.site],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Foster City",
@@ -89,6 +91,7 @@ const jsonLd = {
     name: "Dharmsinh Desai Institute of Technology",
   },
   knowsAbout: [
+    "AI agent products",
     "Frontend engineering",
     "Agentic UI",
     "Generative UI",
