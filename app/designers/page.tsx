@@ -56,8 +56,8 @@ export default function DesignersPage() {
         <section className="grid gap-8 border-b b-line py-10 md:grid-cols-[2fr_1fr] md:py-14">
           <div>
             <h1 className="font-display text-[clamp(2.5rem,6.5vw,5rem)] font-medium leading-[0.98] tracking-tightest t-tx">
-              Fourteen years of product UI —{" "}
-              <em className="t-acc">now shipping agentic and generative interfaces.</em>
+              {person.positioningLead}{" "}
+              <em className="t-acc">{person.positioningTail}</em>
             </h1>
           </div>
           <div className="flex flex-col justify-end gap-2 text-sm t-mut md:border-l md:b-line md:pl-8">
@@ -90,7 +90,7 @@ export default function DesignersPage() {
             >
               Selected work
             </h2>
-            <Kicker>01 — 04</Kicker>
+            <Kicker>01 — {cases[cases.length - 1].index}</Kicker>
           </div>
           {cases.map((item) => (
             <details key={item.index} className="group border-t b-line">
@@ -229,6 +229,9 @@ export default function DesignersPage() {
           <div className="mt-4 flex flex-wrap gap-x-8 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em]">
             <a href={person.phoneHref} className="t-mut hover:t-acc">
               {person.phone}
+            </a>
+            <a href={person.github} className="t-mut hover:t-acc">
+              {person.githubLabel}
             </a>
             <a href={person.site} className="t-mut hover:t-acc">
               {person.siteLabel}

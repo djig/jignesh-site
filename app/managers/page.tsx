@@ -27,7 +27,7 @@ export default function ManagersPage() {
           {/* Intro */}
           <section className={`${card} md:col-span-8`} aria-label="Intro">
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] t-dim">
-              {person.location} / Senior Frontend / Agentic UI
+              {person.location} / Senior Software Engineer / AI Agent Products
             </p>
             <h1 className="mt-3 font-display text-[clamp(2.5rem,5vw,4.25rem)] font-medium leading-[0.95] tracking-tightest t-tx">
               {person.first} {person.last}
@@ -76,10 +76,14 @@ export default function ManagersPage() {
           </section>
 
           {/* Work cards */}
-          {cases.map((item) => (
+          {cases.map((item, i) => (
             <article
               key={item.index}
-              className={`${card} group md:col-span-6`}
+              className={`${card} group ${
+                i === 0 && cases.length % 2 === 1
+                  ? "md:col-span-12"
+                  : "md:col-span-6"
+              }`}
               aria-label={item.title}
             >
               <div className="flex items-baseline justify-between gap-4">
@@ -206,6 +210,9 @@ export default function ManagersPage() {
               <div className="flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs">
                 <a href={person.phoneHref} className="t-mut hover:t-acc">
                   {person.phone}
+                </a>
+                <a href={person.github} className="t-mut hover:t-acc">
+                  {person.githubLabel}
                 </a>
                 <a href={person.site} className="t-mut hover:t-acc">
                   {person.siteLabel}
